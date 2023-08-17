@@ -1,0 +1,50 @@
+B
+B
+D
+A
+B
+B
+D
+B
+D
+D
+
+B
+C
+C
+B
+
+D
+C
+B
+C
+B
+B
+D
+C
+C
+B
+D
+C
+C
+A
+
+
+#sECTION 2
+
+
+in the code is that the bookserializer class is inheriting from the serializers.Serializer class, IT should inherit from the serializers.ModelSerializer class instead.
+
+#CORRECTION
+from rest_framework import serializers
+from .models import Book
+
+class BookSerializer(serializers.ModelSerializer):
+    title = serializers.CharField(max_length=200)
+    author = serializers.CharField(max_length=100)
+    publication_year = serializers.IntegerField()
+    
+
+ 
+
+
